@@ -1,0 +1,102 @@
+<mvc:View
+		controllerName="sap.ui.demo.walkthrough.controller.InvoiceList"
+		xmlns="sap.m"
+		xmlns:mvc="sap.ui.core.mvc">
+	<Panel>
+		<headerToolbar>
+			<Toolbar>
+				<Title text="{i18n>bookListTitle}"/>
+				<!-- <ToolbarSpacer/>
+				<SearchField
+					width="50%"
+					search=".onFilterInvoices"/> -->
+			</Toolbar>
+		</headerToolbar>
+		<Table
+			id="invoiceList"
+			class="sapUiResponsiveMargin"
+			width="auto"
+			items="{
+				path : 'invoice>/Books',
+				sorter : {
+					path : 'ID'
+				}
+			}">
+			<headerToolbar>
+				<Toolbar>
+					<Title text="{i18n>bookListTitle}"/>
+					<ToolbarSpacer/>
+					<SearchField width="50%" search=".onFilterInvoices"/>
+				</Toolbar>
+			</headerToolbar>
+			<columns>
+				<Column
+					hAlign="End"
+					minScreenWidth="Small"
+					demandPopin="true"
+					width="4em">
+				</Column>
+				<Column
+					hAlign="End"
+					minScreenWidth="Small"
+					demandPopin="true"
+					width="4em">
+					<Text text="{i18n>bookID}"/>
+				</Column>
+				<Column>
+					<Text text="{i18n>bookName}"/>
+				</Column>
+				<Column
+					minScreenWidth="Small"
+					demandPopin="true">
+					<Text text="{i18n>authorName}"/>
+				</Column>
+				<Column
+					minScreenWidth="Tablet"
+					demandPopin="false">
+					<Text text="{i18n>stock}"/>
+				</Column>
+				<Column
+					minScreenWidth="Tablet"
+					demandPopin="false">
+					<Text text="{i18n>price}"/>
+				</Column>
+				<Column
+					hAlign="End">
+					<Text text="{i18n>quantity}"/>
+				</Column>
+			</columns>
+			<items>
+				<ColumnListItem
+				type="Navigation"
+				press=".onPress">
+					<cells>
+						<CheckBox text="{invoice>ID}" select=".onCheckboxSelect" />
+						<ObjectNumber number="{invoice>ID}" emphasized="false"/>
+						<ObjectIdentifier title="{invoice>title}"/>
+						<ObjectIdentifier title="{invoice>authorName}"/>
+						<ObjectNumber
+							number="{invoice>stock}"
+							state="{= ${invoice>stock} > 0 ? 'Success' : 'Error'  }"/>
+						<ObjectNumber number="{invoice>price}" emphasized="false"/>
+						<!-- <ObjectNumber number="{invoice>stock}" emphasized="false"/> -->
+						<!-- <Text text="{
+							path: 'invoice>Status',
+							formatter: '.formatter.statusText'
+						}"/> -->
+						<!-- <Text text="{invoice>ShipperName}"/> -->
+
+						<!-- <Text text="{invoice>ShipCity}"/> -->
+						<!-- <Input type="Number" width="4rem" change=".onQuantityChange"/> -->
+						<StepInput id="stepInputId" value="{invoice>quantity}" min="{invoice>quantity}" max="{invoice>stock}" step="1" width="8rem" change=".onQuantityChange"/>
+					</cells>
+				</ColumnListItem>
+			</items>
+		</Table>
+		<FlexBox justifyContent="Center">
+			<items>
+				<Button text="Place Order" press=".onPlaceOrderClick" icon="sap-icon://cart" />
+			</items>
+		</FlexBox>
+	</Panel>
+</mvc:View>

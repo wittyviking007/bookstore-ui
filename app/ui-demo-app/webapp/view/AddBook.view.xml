@@ -1,0 +1,23 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m">
+  <App>
+    <Page title="Add Book">
+      <content>
+        <!-- Add Book Button -->
+        <Button text="Add Book" press=".onAddBookPress" />
+
+        <!-- Dialog Box -->
+        <Dialog id="addBookDialog" title="Add New Book" contentWidth="300px" beginButton=".onDialogAddPress" endButton=".onDialogCancelPress">
+          <content>
+            <VBox>
+              <Label text="Title" />
+              <Input value="{/title}" id="newBookTitle" />
+              <Label text="Author" />
+              <Input value="{/author}" id="newBookAuthor" />
+              <!-- Add more fields for other book properties as needed -->
+            </VBox>
+          </content>
+        </Dialog>
+      </content>
+    </Page>
+  </App>
+</mvc:View>

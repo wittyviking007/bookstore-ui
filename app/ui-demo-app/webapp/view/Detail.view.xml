@@ -1,0 +1,68 @@
+<mvc:View
+	controllerName="sap.ui.demo.walkthrough.controller.Detail"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:wt="sap.ui.demo.walkthrough.control">
+	<!-- <core:CSSStyleSheet href="../css/style.css" /> -->
+	<Page
+		title="{i18n>detailPageTitle}"
+		showNavButton="true"
+		navButtonPress=".onNavBack">
+		<Panel headerText="Book Details">
+		<VBox class="sapUiSmallMargin">
+			<Title class="boldTitle bigFont" level="H6" text="ID"/>
+			<Text text="{bookDetail>/ID}"/>
+
+			<Title class="boldTitle bigFont" level="H6" text="Title"/>
+			<Text text="{bookDetail>/title}"/>
+
+			<Title class="boldTitle bigFont" level="H6" text="Description"/>
+			<Text text="{bookDetail>/descr}"/>
+
+			<Title class="boldTitle bigFont" level="H6" text="Author ID"/>
+			<Text text="{bookDetail>/author_ID}"/>
+
+			<Title class="boldTitle bigFont" level="H6" text="Stock"/>
+			<Text text="{bookDetail>/stock}"/>
+
+			<Title class="boldTitle bigFont" level="H6" text="Price"/>
+			<Text text="{bookDetail>/price}"/>
+
+			<Title class="boldTitle bigFont" level="H6" text="Currency Code"/>
+			<Text text="{bookDetail>/currency_code}"/>
+
+			<!-- <Title class="boldTitle bigFont" level="H6" text="Quantity"/>
+			<Text text="{bookDetail>/quantity}"/> -->
+		</VBox>
+		</Panel>
+
+		<!-- <ObjectHeader
+			responsive="true"
+			fullScreenOptimized="true"
+			number="{
+				parts: [{path: 'bookDetail>/price'}, {path: 'view>/currency'}],
+				type: 'sap.ui.model.type.Currency',
+				formatOptions: {
+					showMeasure: false
+				}
+			}"
+			numberUnit="{view>/currency}"
+			intro="{bookDetail>/ShipperName}"
+			title="{bookDetail>/ProductName}">
+			<attributes>
+				<ObjectAttribute title="{i18n>title}" text="{bookDetail>/quantity}"></ObjectAttribute>
+				<ObjectAttribute title="{i18n>title}" text="{
+					path: 'bookDetail>/price',
+					type: 'sap.ui.model.type.Date',
+					formatOptions: {
+					  style: 'long',
+					  source: {
+						pattern: 'yyyy-MM-ddTHH:mm:ss'
+					  }
+					}
+				  }"/>
+			</attributes>
+		</ObjectHeader> -->
+		<!-- <wt:ProductRating id="rating" class="sapUiSmallMarginBeginEnd" change=".onRatingChange"/> -->
+	</Page>
+</mvc:View>

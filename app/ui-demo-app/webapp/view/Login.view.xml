@@ -1,0 +1,16 @@
+<mvc:View 
+    controllerName="sap.ui.demo.walkthrough.controller.Login"
+    xmlns:mvc="sap.ui.core.mvc" 
+    xmlns="sap.m">
+  <App>
+    <Page title="Login">
+      <content>
+        <VBox justifyContent="Center" alignItems="Center">
+          <Input placeholder="Enter your username" id="usernameInput" />
+          <Input type="Password" placeholder="Enter your password" id="passwordInput" />
+          <Button text="Login" press=".onLoginPress" />
+        </VBox>
+      </content>
+    </Page>
+  </App>
+</mvc:View>

@@ -1,0 +1,30 @@
+<mvc:View 
+    controllerName="sap.ui.demo.walkthrough.controller.AdminHome"
+    xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m">
+  <App>
+    <Page title="Admin Home">
+      <content>
+        <!-- FlexBox for layout -->
+        <FlexBox
+          justifyContent="SpaceAround"
+          alignItems="Center"
+          height="100%"
+          direction="Column">
+
+          <!-- FlexBox for the two buttons -->
+          <FlexBox justifyContent="SpaceAround" alignItems="Center" width="100%">
+
+            <!-- Button 1 -->
+            <Button text="View Books" press=".onButton1Press" width="300px" class="customButtonStyle"/>
+
+            <!-- Button 2 -->
+            <Button text="View Orders" press=".onButton2Press" width="300px" class="customButtonStyle"/>
+
+
+          </FlexBox>
+
+        </FlexBox>
+      </content>
+    </Page>
+  </App>
+</mvc:View>

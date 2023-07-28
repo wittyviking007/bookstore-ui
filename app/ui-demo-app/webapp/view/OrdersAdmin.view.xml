@@ -1,0 +1,45 @@
+<mvc:View 
+    controllerName="sap.ui.demo.walkthrough.controller.OrdersAdmin"
+    xmlns:mvc="sap.ui.core.mvc" 
+    xmlns="sap.m">
+  <Page title="Orders">
+    <content>
+      <Panel headerText="Orders Table">
+        <Table id="ordersTable" items="{order>/Orders}">
+          <columns>
+            <Column>
+              <Text text="Ordered By" />
+            </Column>
+            <Column>
+              <Text text="Order Date" />
+            </Column>
+            <Column>
+              <Text text="Order Time" />
+            </Column>
+            <Column>
+              <Text text="Book Name" />
+            </Column>
+            <Column>
+              <Text text="Price" />
+            </Column>
+            <Column>
+              <Text text="Amount" />
+            </Column>
+          </columns>
+          <items>
+            <ColumnListItem>
+              <cells>
+                <Text text="{order>orderName}" />
+                <Text text="{order>date}" />
+                <Text text="{order>time}" />
+                <Text text="{order>bookName}" />
+                <Text text="{order>price}" />
+                <Text text="{order>amount}" />
+              </cells>
+            </ColumnListItem>
+          </items>
+        </Table>
+      </Panel>
+    </content>
+  </Page>
+</mvc:View>
